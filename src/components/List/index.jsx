@@ -8,7 +8,9 @@ export default class List extends Component {
         <div className="card">
           <a rel="noreferrer" href="https://github.com/reactjs" target="_blank">
             <img
-              src="https://nepaldesk.com/sites/default/files/styles/content_image_display_/public/2023-12/red-panda-2.jpg?itok=mpFQ3c7R"
+              src={
+                "https://nepaldesk.com/sites/default/files/styles/content_image_display_/public/2023-12/red-panda-2.jpg?itok=mpFQ3c7R"
+              }
               alt="profile"
               style={{ width: "100px" }}
             />
