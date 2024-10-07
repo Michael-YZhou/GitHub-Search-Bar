@@ -3,7 +3,7 @@ import "./index.css";
 
 export default class List extends Component {
   render() {
-    const { users } = this.props;
+    const { users, firstTimeMounted, isLoading, err } = this.props.state;
 
     return (
       <div className="row">
