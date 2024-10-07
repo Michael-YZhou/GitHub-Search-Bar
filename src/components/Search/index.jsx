@@ -7,11 +7,11 @@ export default class Search extends Component {
     const {
       keyWordElement: { value: keyWord },
     } = this;
-    console.log(keyWord);
+
     // send axios request
-    axios.get(`http://localhost:3000/api1/search/users2?q=${keyWord}`).then(
+    axios.get(`http://localhost:3000/api1/search/users?q=${keyWord}`).then(
       (response) => {
-        console.log(response.data);
+        this.props.saveUsers(response.data.items);
       },
       (error) => {
         // update the state

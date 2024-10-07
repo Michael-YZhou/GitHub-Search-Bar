@@ -3,30 +3,24 @@ import "./index.css";
 
 export default class List extends Component {
   render() {
+    const { users } = this.props;
+
     return (
       <div className="row">
-        <div className="card">
-          <a rel="noreferrer" href="https://github.com/reactjs" target="_blank">
-            <img
-              src={
-                "https://nepaldesk.com/sites/default/files/styles/content_image_display_/public/2023-12/red-panda-2.jpg?itok=mpFQ3c7R"
-              }
-              alt="profile"
-              style={{ width: "100px" }}
-            />
-          </a>
-          <p className="card-text">reactjs</p>
-        </div>
-        <div className="card">
-          <a rel="noreferrer" href="https://github.com/reactjs" target="_blank">
-            <img
-              src="https://nepaldesk.com/sites/default/files/styles/content_image_display_/public/2023-12/red-panda-2.jpg?itok=mpFQ3c7R"
-              alt="profile"
-              style={{ width: "100px" }}
-            />
-          </a>
-          <p className="card-text">reactjs</p>
-        </div>
+        {users.map((userObj) => {
+          return (
+            <div className="card" key={userObj.id}>
+              <a rel="noreferrer" href={userObj.html_url} target="_blank">
+                <img
+                  src={userObj.avatar_url}
+                  alt="profile"
+                  style={{ width: "100px" }}
+                />
+              </a>
+              <p className="card-text">{userObj.login}</p>
+            </div>
+          );
+        })}
       </div>
     );
   }
