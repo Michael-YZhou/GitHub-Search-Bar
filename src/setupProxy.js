@@ -5,20 +5,10 @@ module.exports = function (app) {
   app.use(
     // The first argument is the base URL that the proxy will intercept
     createProxyMiddleware("/api1", {
-      target: "http://localhost:5001", // The URL of the server to forward the request to
+      target: "http://localhost:5000", // The URL of the server to forward the request to
       changeOrigin: true, // Changes the origin of the host header to the target URL
       pathRewrite: {
         "^/api1": "", // Removes the base URL from the request
-      },
-    })
-  );
-
-  app.use(
-    createProxyMiddleware("/api2", {
-      target: "http://localhost:5002",
-      changeOrigin: true,
-      pathRewrite: {
-        "^/api2": "",
       },
     })
   );
